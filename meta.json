@@ -1,0 +1,11 @@
+{
+  "name": "Git changelog",
+  "summary": "Turns the commits since the last tag into CHANGELOG.md and an HTML report.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "git-changelog"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-git-changelog"
+}

@@ -1,0 +1,65 @@
+{
+  "atomCode": "git-changelog",
+  "name": "Git changelog",
+  "version": "1.0.0",
+  "description": "Turns the commits since the last tag into CHANGELOG.md and an HTML report.",
+  "execution": {
+    "packagePath": "git-changelog.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp git-changelog.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "since": {
+      "label": "起始 ref（留空取最近 tag）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "until": {
+      "label": "结束 ref",
+      "type": "vuex-input",
+      "default": "HEAD"
+    },
+    "output": {
+      "label": "写出的文件",
+      "type": "vuex-input",
+      "default": "CHANGELOG.md"
+    },
+    "label": {
+      "label": "报告名称",
+      "type": "vuex-input",
+      "default": "Changelog"
+    }
+  },
+  "output": {
+    "commits": {
+      "type": "string",
+      "description": "提交数"
+    },
+    "since": {
+      "type": "string",
+      "description": "起始 ref"
+    },
+    "until": {
+      "type": "string",
+      "description": "结束 ref"
+    },
+    "outputFile": {
+      "type": "string",
+      "description": "写出的文件"
+    },
+    "changelog": {
+      "type": "artifact",
+      "description": "归档的 changelog 文件"
+    },
+    "report": {
+      "type": "report",
+      "description": "构建页内嵌报告"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}
