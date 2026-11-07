@@ -121,6 +121,9 @@ public class GitChangelogAtom implements AtomTask {
             }
             process.waitFor();
             return out.toString();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return "";
         } catch (Exception e) {
             return "";
         }
