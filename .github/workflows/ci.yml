@@ -37,4 +37,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: git-changelog-atom
-          path: atom/dist/git-changelog/
+          path: atom/target/dist/git-changelog/
